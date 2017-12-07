@@ -1,0 +1,39 @@
+function SaveLatexPlot(handle, figwidth, figheight, varargin)
+
+    tikzpath = '../../matlab2tikz/src';
+    
+    % Check for existence of tikz folder; otherwise, just skip the creation
+    % of the Tikz file
+    if(~(exist(tikzpath, 'dir') == 7))
+        warning('Matlab2Tikz not found. Skipping Tex Export.')
+        return
+    end
+
+    %Matlab2Tikz code
+    addpath(tikzpath)
+
+    %Output file is the same as figure handle name, unless specified
+    %otherwise
+    
+    if(nargin == 4)
+        filename = ['./results/' varargin{1} '.tex'];
+    else
+        filename = ['./results/' inputname(1) '.tex'];
+    end
+    
+    %Save the file
+    cleanfigure;
+    matlab2tikz('filename',filename,...
+                'figurehandle',handle,...
+                'showInfo',false,...
+                'showWarnings',false,...
+                'height',[num2str(figheight) '\textwidth'],...
+                'width', [num2str(figwidth ) '\textwidth'],...    
+                'extraAxisOptions',{'ylabel shift={-5pt}',...
+                                    'xticklabel style={/pgf/number format/fixed}',...
+                                    'yticklabel style={/pgf/number format/fixed}', ...
+                                    'scaled ticks=false' ,...
+                                    ' tick label style={/pgf/number format/fixed}'...
+                                    }...
+                 );
+end
