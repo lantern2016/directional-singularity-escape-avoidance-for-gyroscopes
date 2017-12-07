@@ -1,6 +1,7 @@
 ## Binary/rendered result files
 matlab/results/*.mat
 matlab/results/*.tex
+!matlab/results/pdfplots.tex
 
 
 ## Core latex/pdflatex auxiliary files:

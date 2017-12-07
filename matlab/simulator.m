@@ -15,6 +15,7 @@
 clc;
 clear all;
 addpath('configuration','kinematics','graphics','model','cmgsteering','momentgenerator','makeplots');
+warning(fileread('../README.txt'))
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% System model selection

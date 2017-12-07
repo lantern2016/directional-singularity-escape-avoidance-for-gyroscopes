@@ -1,0 +1,80 @@
+\documentclass{revtex4-1}
+% Additional packages
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+
+\providecommand{\reftext}{\tiny (ref)\hspace{-5pt}}
+\providecommand{\bro}{\boldsymbol{\rho}}
+\providecommand{\bvj}[1][j]{\hat{\boldsymbol{v}}_{#1}}
+\providecommand{\bvjT}[1][j]{\hat{\boldsymbol{v}}^T_{#1}}
+\providecommand{\bgamma}{\boldsymbol{\gamma}}
+\providecommand{\bdgamma}{\dot{\bgamma}}
+\providecommand{\dgamma}{\dot{\gamma}}
+\providecommand{\bddgamma}{\ddot{\bgamma}}
+\providecommand{\bomega}{\boldsymbol{\omega}}
+\providecommand{\bdomega}{\dot{\bomega}}
+\providecommand{\bOmega}{\boldsymbol{\Omega}}
+\providecommand{\bOmegac}{\boldsymbol{\Omega}_c}
+\providecommand{\bdOmega}{\dot{\bOmega}}
+\providecommand{\bMint}{\boldsymbol{M}_\text{int}}
+\providecommand{\bdgammac}{\bdgamma_c}
+\providecommand{\bdgammad}{\bdgamma_s}
+\providecommand{\bdgammae}{\bdgamma_e}
+\providecommand{\bdgammap}{\bdgamma_p}
+\providecommand{\bMintref}{\boldsymbol{M}_{\text{int,ref}}}
+\providecommand{\twonorm}[1]{||{#1}||}
+\providecommand{\onenorm}[1]{|{#1}|}
+\providecommand{\dgammai}{\dgamma_{s,i}}
+\providecommand{\unit}[1]{\mathrm{#1}}
+\providecommand{\units}[1]{\, \mathrm{#1}}
+\providecommand{\unitb}[1]{\, (\mathrm{#1})}
+\providecommand{\deltaTrack}{\delta_{\text{track}}}
+\providecommand{\deltaMAN}{\delta_{\text{man}}}
+\providecommand{\deltasat}{\delta_{\text{pot}}}
+
+
+
+% For tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+
+\begin{document}
+
+\title{Script to generate graphs in ``Directional Singularity Escape and Avoidance for Single-Gimbal Control Moment Gyroscopes''}
+
+\author{Laurens Valk, Andrew Berry, and Heike Vallery}
+\affiliation{Delft University of Technology, Delft, 2628 CD, The Netherlands}
+
+\pagenumbering{gobble}
+\maketitle
+
+\begin{figure}
+\input{SingularityMeasures.tex}
+\end{figure}
+
+\clearpage
+
+\begin{figure}
+\input{smallsat-DSEA-for_constant_M-dir_1_0_0-10-dist_0_0_0-gimbalinit_0_0_0_0___-----___smallsat-Wie2005-for_constant_M-dir_1_0_0-10-dist_0_0_0-gimbalinit_0_0_0_0.tex}
+\end{figure} 
+
+\clearpage
+
+
+
+\begin{figure}
+\input{smallsat-DSEA-for_constant_M-dir_-1_0_0-10-dist_0_0_0-gimbalinit_-90_180_90_0___-----___smallsat-Wie2005-for_constant_M-dir_-1_0_0-10-dist_0_0_0-gimbalinit_-90_180_90_0.tex}
+\end{figure}
+
+\clearpage
+
+
+\begin{figure}
+\input{smallsat-DSEA-disturbance_rejection-dir_NaN_NaN_NaN-unknown-dist_0.5_0_0-gimbalinit_0_0_0_0___-----___smallsat-Wie2005-disturbance_rejection-dir_NaN_NaN_NaN-unknown-dist_0.5_0_0-gimbalinit_0_0_0_0.tex}
+\end{figure}
+
+
+\end{document}
+
